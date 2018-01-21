@@ -1,0 +1,81 @@
+
+.backgr-green {
+  background: #121a1d; /* Old browsers */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#121a1d), color-stop(100%,#1abc9c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  #121a1d 0%,#1abc9c 100%); /* Chrome10+,Safari5.1+ */
+  background: -ms-linear-gradient(-45deg,  #121a1d 0%,#1abc9c 100%); /* IE10+ */
+  background: linear-gradient(135deg,  #121a1d 0%,#1abc9c 100%); /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121a1d', endColorstr='#1abc9c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color:#fff;
+}
+
+
+.backgr-blue {
+  background: linear-gradient(130deg, #07d9a3, #048fee);
+  background-size: 400% 400%;
+
+  -webkit-animation: gradient 16s ease infinite;
+  -moz-animation: gradient 16s ease infinite;
+  animation: gradient 16s ease infinite;
+}
+@-webkit-keyframes gradient {
+  0%{background-position:5% 0%}
+  50%{background-position:96% 100%}
+  100%{background-position:5% 0%}
+}
+@-moz-keyframes gradient {
+  0%{background-position:5% 0%}
+  50%{background-position:96% 100%}
+  100%{background-position:5% 0%}
+}
+@keyframes gradient { 
+  0%{background-position:5% 0%}
+  50%{background-position:96% 100%}
+  100%{background-position:5% 0%}
+}
+
+
+.backgr-rainbow {
+  /*height: 100vh;*/
+  background: -webkit-linear-gradient(135deg, #3a342a 0%, #9b4a1b 40%, #3a342a 100%);
+  background: linear-gradient(-45deg, #3a342a 0%, #9b4a1b 40%, #3a342a 100%);
+  -webkit-animation: hue 3s linear infinite;
+          animation: hue 3s linear infinite;
+}
+@-webkit-keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100vw 0;
+  }
+}
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100vw 0;
+  }
+}
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}

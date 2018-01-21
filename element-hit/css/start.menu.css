@@ -1,0 +1,95 @@
+
+
+.imgPP {
+  width: 80px;
+  height: 80px;
+
+  display: block;
+  margin: 0 auto;
+}
+.imgPP2 {
+  width: 60px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 50px 86.6px;
+  border-color: transparent transparent transparent #ffffff;
+  line-height: 0;
+  _border-color: #000000 #000000 #000000 #ffffff;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+
+
+.start {
+  position: relative;
+
+  margin-left: 120px;
+  margin-top: 135px;
+
+  cursor: pointer;
+}
+.line-left {
+  position: absolute;
+
+  width: 100px;
+  height: 202px;
+
+  left: -4px;  
+  
+  border-left: 4px solid #B5ABAB;
+}
+.line-top {
+  position: absolute;
+
+  top: 34px;
+  left: -62px;
+  right: 0;
+
+  width: 180px;
+  height: 155px;
+
+  transform: rotate(35deg);
+  -webkit-transform: rotate(35deg);
+  -moz-transform: rotate(35deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+
+  border-top: 4px solid #B5ABAB;
+}
+.line-bottom {
+  position: absolute;
+
+  top: 0px;
+  left: -50px;
+  right: 0;
+
+  width: 155px;
+  height: 180px;
+
+  transform: rotate(55deg);
+  -webkit-transform: rotate(55deg);
+  -moz-transform: rotate(55deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+
+  border-right: 4px solid #B5ABAB;
+}
+
+.triangle-animat {
+  width:310px;
+  height:310px;
+
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  -webkit-transform:translate(-50%,-50%);
+}
+
+

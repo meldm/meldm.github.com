@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8" />
+    <title>Element Hit</title>
+
+    <!-- Seo -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/pavilion.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/start.menu.css">
+    <link rel="stylesheet" href="css/background.css">
+
+    <link rel="stylesheet" href="css/iPhone.animation.css">
+    <link rel="stylesheet" href="css/iPhone.layer.css">
+    <link rel="stylesheet" href="css/slider.css">
+
+    <link rel="stylesheet" href="css/locations/electro.layer.css">
+    <link rel="stylesheet" href="css/locations/nature.layer.css">
+    <link rel="stylesheet" href="css/locations/urban.layer.css">
+    <link rel="stylesheet" href="css/locations/alchemy.layer.css">
+    <link rel="stylesheet" href="css/locations/dark.layer.css">
+
+
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Roboto:100);
+        html {
+            min-height: 100%;
+        }
+        
+        body {
+            font-family: 'HelveticaNeue-Light', Roboto;
+        }
+        
+        .animation {
+            position: relative;
+            cursor: default;
+            display: block;
+            z-index: 2;
+            /*width: 0px;*/
+            /*height: 0px;*/
+            width: 375px;
+            height: 617px;
+            background-color: rgba(255, 255, 255, 0);
+            /*background-color: '#052332';*/
+            /*background-color: red;*/
+        }
+        
+        .game {
+            width: 375px;
+            height: 617px;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .game:active {
+            cursor: pointer;
+            cursor: -webkit-grabbing;
+        }
+        
+        .off {
+            display: none;
+        }
+        /*body {
+			background-color: rgb(5,35,50);
+
+			width: calc(100% - 20px);
+			height: calc(100% - 20px);
+
+			margin: 0;
+			padding: 10px 10px;
+
+			display: flex;
+
+			font-family: 'Roboto', sans-serif;			
+		}*/
+    </style>
+</head>
+
+<body>
+    <!-- <h1>CircleColliderGame</h1> -->
+
+    <div class="iphone">
+        <div class="iphone-top">
+            <span class="camera"></span>
+            <span class="sensor"></span>
+            <span class="speaker"></span>
+        </div>
+        <div class="top-bar"></div>
+
+        <div class="iphone-screen">
+            <!-- GAME -->
+            <!-- <div class="off" id="level1">
+				<div class="game" id="game"></div>
+				<div class="dead.animation.game off" id="animation"></div>
+			</div> -->
+            <div id="game" class="off">
+                <iframe src="test.html" width="375" height="617">
+					Ваш браузер не поддерживает встроенные фреймы!
+				</iframe>
+            </div>
+
+            <!-- MENU -->
+            <div id="menu">
+                <div id="slider">
+                    <ul>
+                        <!-- Start menu -->
+                        <li>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-pp-33">
+                                        <img src="images/zvukOn.png" class="imgPP">
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <img src="images/achivki.png" class="imgPP2">
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <img src="images/starr.png" class="imgPP">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="start control_next">
+                                <div class="line-left"></div>
+                                <div class="line-top"></div>
+                                <div class="line-bottom"></div>
+                            </div>
+                        </li>
+
+                        <!-- Electro -->
+                        <li class="electro-location">
+                            <div class="container levels-map">
+                                <div class="row levels-map-top">
+                                    <div class="col-pp-33">
+                                        <div class="triangle-electro-prev control_prev"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box">
+                                            <img src="images/iconElectro.png" class="logo-box imgPP">
+                                        </div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="triangle-electro-next control_next"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                        <!-- <input type="button" value="1" id="level1" name="start"> -->
+                                        <img src="images/sticker-1.png" class="number-box" id="level1" name="start">
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h1>ELECTRO</h1>
+                        </li>
+
+                        <!-- Nature -->
+                        <li class="nature-location">
+                            <div class="container levels-map">
+                                <div class="row levels-map-top">
+                                    <div class="col-pp-33">
+                                        <div class="triangle-nature-prev control_prev"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="triangle-nature-next control_next"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box nature-box"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h1>NATURE</h1>
+                        </li>
+
+                        <!-- Urban -->
+                        <li class="urban-location">
+                            <div class="container levels-map">
+                                <div class="row levels-map-top">
+                                    <div class="col-pp-33">
+                                        <div class="triangle-urban-prev control_prev"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="triangle-urban-next control_next"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                    <div class="col-pp-20">
+                                        <div class="level-box urban-box"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h1>URBAN</h1>
+                        </li>
+
+                        <!-- Dark -->
+                        <!-- <li class="dark-location">
+                            <div class="container levels-map">
+                                <div class="row">
+                                    <div class="col-pp-33">
+                                        <div class="level-box control_prev"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box control_next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> -->
+
+                        <!-- Alchemy -->
+                        <!-- <li class="alchemy-location">
+                            <div class="container levels-map">
+                                <div class="row">
+                                    <div class="col-pp-33">
+                                        <div class="level-box control_prev"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box electro-box"></div>
+                                    </div>
+                                    <div class="col-pp-33">
+                                        <div class="level-box control_next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> -->
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- iphone-screen -->
+
+
+
+        <div class="buttons">
+            <span class="on-off"></span>
+            <span class="sleep"></span>
+            <span class="up"></span>
+            <span class="down"></span>
+        </div>
+        <div class="bottom-bar"></div>
+        <div class="iphone-bottom">
+            <span></span>
+        </div>
+    </div>
+
+    <!-- ColorChange -->
+    <div class="colors-row" id="rowColors">
+        <div class="color-box backgr-green" id="boxGreen"></div>
+        <div class="color-box backgr-blue" id="boxBlue"></div>
+        <div class="color-box backgr-rainbow" id="boxRainbow"></div>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/background.js"></script>
+    <script src="js/slider.js"></script>
+
+    <!-- <script src="js/triangle.animation.js"></script> -->
+
+
+
+
+    <script type="text/javascript">
+        // window.onload = function() {
+        var game = document.getElementById("game"),
+            menu = document.getElementById("menu"),
+            level1 = document.getElementById("level1");
+        // console.log("1");
+
+        level1.addEventListener("click", start);
+        // level1.onclick = start;
+
+        function start() {
+            console.log("+");
+            // level1.classList.remove("off");
+            // game.classList.add("game");
+            game.classList.remove("off");
+            menu.classList.add("off");
+        };
+    </script>
+</body>
+
+</html>

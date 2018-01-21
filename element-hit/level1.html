@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+	<title>Level1</title>
+
+	<style type="text/css">
+		.game {
+			width: 375px;
+			height: 617px;
+		}
+
+		/*.game:active { 
+			cursor: pointer;
+			cursor: -webkit-grabbing;
+		}*/
+	</style>
+
+	<!-- <script src="matter.js" type="text/javascript"></script> -->
+</head>
+<body>
+
+	<div class="game" id="game"></div>
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.js'></script>
+	<script type="text/javascript">
+		/* ===================================================== 
+ 		* Setup Matter Engine
+ 		* ================================================== */
+
+		// Aliases
+		var World = Matter.World,
+			Engine = Matter.Engine,
+			Render = Matter.Render,
+			Bodies = Matter.Bodies,
+			Body = Matter.Body,
+			Events = Matter.Events,
+			Mouse = Matter.Mouse,
+			MouseConstraint = Matter.MouseConstraint;
+
+		var engine,
+			render,
+			mouseConstraint,
+			element,
+			// pixelRatio,
+			width,
+			height;
+
+		function setupMatter() {
+			element = document.getElementById('game');
+			// pixelRatio = window.devicePixelRatio || 1;
+			// width = window.innerWidth;
+			// height = window.innerHeight;
+			width = 375;
+			height = 617;
+
+			engine = Engine.create();
+
+			// set the gravity to zero before the game starts
+			engine.world.gravity.x = 0;
+			engine.world.gravity.y = 0;
+
+			// add a mouse controlled constraint
+			// mouseConstraint = MouseConstraint.create(engine);
+			// World.add(engine.world, mouseConstraint);
+
+			// pass mouse to renderer to enable showMousePosition
+			// render.mouse = mouseConstraint.mouse;
+
+			// create the renderer with options
+			render = Render.create({
+				element: element,
+				engine: engine,
+				options: {
+					width: width,
+					height: height,
+					// pixelRatio: pixelRatio,
+					background: '#052332',
+					// wireframeBackground: '#222',
+					// hasBounds: false,
+					// enabled: true,
+
+					// возможность менять цвета и фоны
+					wireframes: false,
+					// showSleeping: true,
+					// showDebug: true,
+					// showBroadphase: true,
+					showBounds: false,
+					// showVelocity: true,
+					// showCollisions: true,
+					showSeparations: false,
+					// showAxes: true,
+					// showPositions: true,
+
+					// наличие опознавателей на объектах
+					showAngleIndicator: false,
+					// showIds: true,
+					// showShadows: true,
+					showVertexNumbers: false,
+					showConvexHulls: false,
+					showInternalEdges: false,
+					showMousePosition: false
+				}
+			});
+		}
+
+ 		/* ===================================================== 
+		 * Event Listener and Handlers
+		 * ================================================== */
+
+		function addEventListeners() {
+			window.addEventListener('click', handleClick, false);
+			// window.addEventListener('touchstart', handleTouchstart, false);
+			// window.addEventListener('resize', handleResize, false);
+		}
+
+		function handleResize() {
+			console.log('TODO: fix this');
+		}
+
+		function handleTouchstart(event) {
+			bumpCircle();
+		}
+
+		function handleClick(event) {
+			// event.preventDefault();
+			bumpCircle();
+		}
+
+		/* ===================================================== 
+		 * The Obstacle
+		 * ================================================== */
+
+		function createObstacle() {
+			var x1 = 60;
+				x2 = 200;
+
+			var y1 = 200;
+				y2 = 50;
+
+			var h = 35;
+
+			var ang = 40;
+
+			var obstacles = {
+				triangleA: Bodies.polygon(x1, y1, 3, h, { 
+					isStatic: true, 
+					angle: ang,
+					render: {
+						fillStyle: '#00abff' 
+					}
+				}),
+				triangleB: Bodies.polygon(x2, y2, 3, h, { 
+					isStatic: true,
+					render: {
+						fillStyle: '#00abff' 
+					}
+				})
+			};
+
+			World.add(engine.world, [obstacles.triangleA, obstacles.triangleB]);
+		}
+
+		/* ===================================================== 
+		 * The Player Class
+		 * ================================================== */
+
+		var Circle = function() {
+			this.x = 185;
+			this.y = 550;
+			this.r = 30;
+			this.static = false;
+
+			this.body = Bodies.circle(this.x, this.y, this.r, this.static);
+
+			this.body.restitution = 1.3;
+			this.body.density = 0.0005;
+			this.body.frictionAir = 0.034;
+			this.body.friction = 0.01;
+			// this.body.slop = 0.5;
+
+			this.body.render.fillStyle = '#00abff';
+			// this.body.render.strokeStyle = 'red';
+		};
+
+		Circle.prototype.addCircle = function() {
+			World.add(engine.world, this.body);
+		};
+
+		/* ===================================================== 
+		 * The Game Bodies
+		 * ================================================== */
+
+		var circle,
+			// score = 0,
+			start = false,
+			collision = false;
+
+		function createCircle() {
+			circle = new Circle();
+			circle.addCircle();
+		}
+
+		function bumpCircle() {
+			if (collision || !start) return;
+
+			// var b = circle.body;
+
+			// var p = circle.body.position;
+
+			// var f = {
+			// 	x: 0.5, 
+			// 	y: -0.1
+			// };
+
+			// Body.applyForce(b, p, f);
+
+			console.log("+");
+		}
+
+		/* ===================================================== 
+		 * The Game
+		 * ================================================== */
+
+		function runMatter() {
+			// init the engine and renderer
+			Engine.run(engine);
+			Render.run(render);
+
+			// Listeners for the game
+
+			// Update the walls when the engine updates
+			// Events.on(engine, 'tick', moveWalls);
+
+			// Collision Event ends the game :-(
+			Events.on(engine, 'collisionStart', endGame);
+		}
+
+		function startGame() {
+			start = true;
+		}
+
+		function endGame() {
+			collision = true;
+		}
+
+		/* ===================================================== 
+		 * Kickoff
+		 * ================================================== */
+
+		window.onload = init();
+
+		// Initializes the game
+		function init() {
+
+			// Setup the Matter engine and renderer
+			setupMatter();
+
+			// Add event listeners
+			addEventListeners();
+
+			// Add the necessary Matter bodies to the world
+			createObstacle();
+			createCircle();
+
+			// GUI 
+			// setupGUI();
+
+			// Runs the engine and renderer
+			runMatter();
+		}
+	</script>
+</body>
+</html>

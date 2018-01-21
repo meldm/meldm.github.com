@@ -1,0 +1,31 @@
+
+.nature-location {
+  background-color: #0d4230;
+}
+
+.nature-box {
+  background-color: #00ff64;
+}
+
+.triangle-nature-prev {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 35px 60.6px 35px 0;
+  border-color: transparent #00ff64 transparent transparent;
+  line-height: 0;
+
+  _border-color: #000000 #00ff64 #000000 #000000;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+.triangle-nature-next {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 35px 0 35px 60.6px;
+  border-color: transparent transparent transparent #00ff64;
+  line-height: 0;
+
+  _border-color: #000000 #000000 #000000 #00ff64;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}

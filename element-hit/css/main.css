@@ -1,0 +1,80 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  /*iPhone font*/
+  /*font: 16px/1.6 "Open Sans", sans-serif;*/
+
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2.4em;
+  text-align: center;
+  letter-spacing: 4px;
+  color: #B5ABAB;
+}
+
+
+/* Colors panel */
+.color-box {
+  width: 40px;
+  height: 40px;
+
+  border: 0.5px solid #B5ABAB;
+  border-radius: 6px;
+
+  /*float: right;*/
+
+  margin: 4px;
+}
+.colors-row {
+  width: 150px;
+  display: inline;
+
+  position: absolute;
+
+  top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* Locations + Levels */
+.levels-map {
+  margin-top: 5px;
+  margin-right: 15px;
+}
+.levels-map-top {
+  width: 100%;
+  margin: 0 auto;
+  padding: 55px 62px;
+}
+
+.level-box {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 5px;
+
+  margin: 7px 0;
+} 
+
+
+
+/*  */
+.madeby {
+  /*position: fixed;*/
+  bottom: 0px;
+  left: 0px;
+
+  color: #B5ABAB;
+  font-size: 12pt;
+}

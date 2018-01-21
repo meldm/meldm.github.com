@@ -1,0 +1,45 @@
+.electro-location {
+    background-color: #052332;
+}
+
+.electro-box {
+    background-color: #00abff;
+}
+
+.logo-box {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0%;
+    left: 8px;
+}
+
+.number-box {
+    width: 55px;
+    /* height: 75px; */
+    position: absolute;
+    top: 12px;
+    left: 15px;
+}
+
+.triangle-electro-prev {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 35px 60.6px 35px 0;
+    border-color: transparent #00abff transparent transparent;
+    line-height: 0;
+    _border-color: #000000 #00abff #000000 #000000;
+    _filter: progid: DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+
+.triangle-electro-next {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 35px 0 35px 60.6px;
+    border-color: transparent transparent transparent #00abff;
+    line-height: 0;
+    _border-color: #000000 #000000 #000000 #00abff;
+    _filter: progid: DXImageTransform.Microsoft.Chroma(color='#000000');
+}

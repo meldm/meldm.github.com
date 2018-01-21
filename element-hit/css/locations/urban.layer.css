@@ -1,0 +1,33 @@
+
+
+.urban-location {
+  background-color: #3c3c3c;
+}
+
+.urban-box {
+  background-color: #b9b9b9;
+}
+
+
+.triangle-urban-prev {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 35px 60.6px 35px 0;
+  border-color: transparent #b9b9b9 transparent transparent;
+  line-height: 0;
+
+  _border-color: #000000 #b9b9b9 #000000 #000000;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+.triangle-urban-next {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 35px 0 35px 60.6px;
+  border-color: transparent transparent transparent #b9b9b9;
+  line-height: 0;
+
+  _border-color: #000000 #000000 #000000 #b9b9b9;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+}
