@@ -82,6 +82,13 @@ body {
     width: 100%;
 }
 
+.bottom_menu {
+    text-align: center;
+}
+.bottom_menu li {
+    display: inline; 
+}
+
 .footer {
     position: relative;
     bottom: 0;
