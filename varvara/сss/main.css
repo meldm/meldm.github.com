@@ -1,0 +1,90 @@
+body {
+    background-color: #fbb215 !important;
+    height: 100%;
+    margin: 0;
+}
+
+.top {
+    height: 100px;
+    background: url(../imgs/shapka.png) no-repeat;
+    background-position: center center;
+    background-size: 85%;
+}
+
+@media only screen and (min-width: 500px) {
+    .top {
+        height: 150px;
+        background-size: 80%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .top {
+        height: 170px;
+        background-size: 80%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .top {
+        height: 190px;
+        background-size: 65%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .top {
+        height: 210px;
+        background-size: 50%;
+    }
+}
+
+.main {
+    width: 70%;
+    margin: 0 auto;
+    /* height: 600px; */
+    text-align: justify;
+    position: relative;
+    min-height: 100%;
+}
+
+.leftimg {
+    float:left;
+    margin: 9px;
+}
+.rightimg  {
+    float: right; 
+    margin: 9px; 
+}
+
+.nav-item a {
+    display: inline-block;
+    /* color:#ffeb3b; */
+    /* line-height: 1; */
+    text-decoration:none;
+    cursor: pointer;
+    position:relative;
+}
+.nav-item a:after {
+    background-color: #212529;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left:50%;
+    position:absolute;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    transform:translateX(-50%);
+}
+.nav-item a:hover:after,
+.nav-item a:focus:after {
+    width: 100%;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    height: 50px;
+    margin-top: 50px;
+}
